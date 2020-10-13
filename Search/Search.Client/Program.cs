@@ -6,6 +6,8 @@ using Search.Common.Models;
 using Search.Common.Services;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Text.RegularExpressions;
 using Error = CommandLine.Error;
 
 namespace Search.Client
@@ -33,6 +35,17 @@ namespace Search.Client
             // 3. Räkna alla recept som är upplagda av Per Morberg.
             // 4. Hitta 30 recept som tillhör kategorin Bönor.
             // 5. Räkna alla recept som har en tillagningstid på under 10 minuter (tips: TimeSpan lagras som ticks i index).
+
+            //var result = client.Search(s => s.QueryOnQueryString(options.Query)
+            //.Sort(order => order.Descending(field => field))
+
+            //.Take(20));
+
+            //var result = client.Count(Search => Search.Query(
+            //                                          query => query.Match(
+            //                                              match => match.Field(field => field.Author).Query("Per Moberg"))));
+
+            var result = client.Search(serrch => serrch.QueryOnQueryString("categories: \"bönor\""));
 
             return 0;
         }
