@@ -6,8 +6,11 @@ namespace tgif
     {
         static void Main(string[] args)
         {
-            // Skriv en applikation som läser in ett datum via användarinmatning,
-            // som sedan räknar ut hur många dagar det är till nästa fredag.
+            DateTime Dob;
+            Console.WriteLine("Enter date of Birth in format MM/DD/YYYY: ");
+            //accepts date in MM/dd/yyyy format
+            Dob = DateTime.Parse(Console.ReadLine());
+
         }
     }
 }
